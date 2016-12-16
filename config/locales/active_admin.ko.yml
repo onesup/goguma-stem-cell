@@ -1,0 +1,6 @@
+ko:
+  active_admin:
+    filters:
+      predicates:
+        eq: 동일한
+        in: 비슷한

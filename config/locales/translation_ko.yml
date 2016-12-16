@@ -1,0 +1,34 @@
+ko:
+  activerecord:
+    models:
+      active_admin/comment: "코멘트"  #g
+      content: "콘텐츠"  #g
+      user: "회원 정보"  #g
+      category: '카테고리'
+      keyword: '검색어'
+      recommend_keyword: '추천 검색어'
+    attributes:
+      active_admin/comment:
+        author: :activerecord.models.author  #g
+        author_type: "저자 유형"  #g
+        body: "신체"  #g
+        namespace: "네임 스페이스"  #g
+        resource: :activerecord.models.resource  #g
+        resource_type: "리소스 유형"  #g
+      content:
+        category: "장르"  #g
+        price: "가격"  #g
+        title: "품명"  #g
+        category_list: '장르'
+      user:
+        name: "이름"  #g
+        provider: "유입 SNS"  #g
+        uid: UID  #g
+      keyword:
+        keyword: 검색어
+        daily_query_logs_count: 일일 검색 수
+        query_logs_count: 총 검색수
+      recommend_keyword:
+        keyword: 검색어
+        rank: 노출 순서
+        state: 노출 상태

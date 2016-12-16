@@ -1,0 +1,7 @@
+<div>
+  <p>'오늘자 빈 sheet 다운로드' 에서 받은 sheet를 수정 후 아래에서 업로드 해주세요.</p>
+  <%= form_for :recommend_keyword, url: admin_upload_recommend_keywords_sheet_upload_path, method: :post, html: { multipart: true } do |f| %>
+    <%= f.file_field :recommend_keywords %>
+    <%= f.submit '업로드' %>
+  <% end %>
+</div>

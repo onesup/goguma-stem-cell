@@ -1,0 +1,25 @@
+
+  <nav class="col-sm-3 col-md-2 sidebar toolbar-conversations toolbar_menu">
+    <ul class="nav nav-sidebar">
+      <li>
+        <%#= link_to new_message_path do %>
+          <!-- <i class='icon_message-new <%#= 'active' if controller.action_name == 'new' %>'>new</i> -->
+        <%# end %>
+      </li>
+      <li class="<%= 'active' if params[:box] == 'inbox' %>">
+        <%= link_to conversations_path(box: :inbox) do %>
+          <i class='icon_message-inbox'>inbox</i> (<%#= current_subject.unread_messages_count %>)
+        <% end %>
+      </li>
+      <li class="<%= 'active' if params[:box] == 'sentbox' %>">
+        <%= link_to conversations_path(box: :sentbox) do %>
+          <i class='icon_message-sentbox <%= 'active' if params[:box] == 'sentbox' %>'>sentbox</i>
+        <% end %>
+      </li>
+      <li class="<%= 'active' if params[:box] == 'trash' %>">
+        <%= link_to conversations_path(box: :trash) do %>
+          <i class='icon_message-trash <%= 'active' if params[:box] == 'trash' %>'>trash</i>
+        <% end %>
+      </li>
+    </ul>
+  </nav>

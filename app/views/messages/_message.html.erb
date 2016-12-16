@@ -1,0 +1,18 @@
+<%= div_for(message, :class => 'card') do %>
+  <div class="media card-header<%= message.is_unread?(@actor) ? 'unread' : '' %>">
+    <div class="media-heading name">
+      <div class="name card-title">
+        <%= link_to message.sender.name, admin_user_path(message.sender) %>
+      </div>
+      <div class="date card-title">
+        <%= "#{time_ago_in_words(message.updated_at)} 전" %>
+      </div>
+    </div>
+
+  <div class="media-body card-block">
+    <div class="word-break pre-message card-title">
+      <%= raw(message.body) %>
+    </div>
+  </div>
+</div>
+<% end %>

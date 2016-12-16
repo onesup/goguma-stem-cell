@@ -1,0 +1,7 @@
+<h1></h1>
+<h2>비밀번호 재지정</h2>
+<%= semantic_form_for :user, url: password_reset_request_path(@resource), method: :put do |f| %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.submit %>
+<% end %>

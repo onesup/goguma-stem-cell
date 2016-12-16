@@ -1,0 +1,7 @@
+ko:
+  devise:
+    mailer:
+      confirmation_instructions:
+        subject: "Please confirm your e-mail address"
+      reset_password_instructions:
+        subject: "비밀번호 초기화 안내"

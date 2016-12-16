@@ -1,0 +1,31 @@
+<%= div_for(conversation, :class =>"card") do %>
+  <% if conversation.is_unread?(@actor) %>
+    <div class="content_left card-header unread card-inverse" style='background-color: #faf2cc; border-color: #faf2cc;'>
+  <% else %>
+    <div class="content_left card-header">
+  <% end %>
+    <div class="card-title">
+      <%= link_to conversation.last_sender.name, admin_user_path(conversation.last_sender) %>
+    </div>
+    <h4 class="subject card-text">
+      <%= link_to(truncate(conversation.subject, :length => 55), conversation_path(conversation.id,:box => @box,:page => params[:page])) %>
+    </h4>
+    <div class="date card-subtitle">
+      <%= "#{time_ago_in_words(conversation.updated_at)} 전" %>
+    </div>
+  </div>
+  <div class="card-block">
+    <div class="briefing card-text">
+      <%= raw(truncate(strip_tags(conversation.last_message.body), :length => 50)) %>
+    </div>
+    <% unless @box.eql?'trash' %>
+      <div class="action card-link">
+        <%= link_to('휴지통으로', conversation_path(conversation, :location => @box,
+                                                    :box => @box,
+                                                    :page => params[:page]),
+                                                    :confirm => '삭제하시겠습니까',
+                                                    :method => :delete) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

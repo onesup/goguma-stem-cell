@@ -1,0 +1,10 @@
+<div class="col-sm-9 col-md-10 main conversations">
+  <%= render partial: 'conversation', collection: @conversations %>
+
+  <%= render partial: 'layouts/more',
+             locals: {
+               path: conversations_path,
+               per_page: 9,
+               total: @conversations.total_count
+            } %>
+</div>
